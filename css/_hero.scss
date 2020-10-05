@@ -1,0 +1,154 @@
+.hero {
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em 0 4em;
+
+    .logo {
+      z-index: 1000;
+    }
+
+    .logo_img_white {
+      fill-rule: #fff !important;
+      fill: #fff !important;
+    }
+
+    .header__nav__list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: hsla(229, 31%, 21%, 0.897);
+      width: 100vw;
+      height: 100vh;
+      display: none;
+
+      .nav__list {
+        width: 80%;
+        margin: 10em auto 0;
+
+        li {
+          list-style-type: none;
+          text-align: center;
+          letter-spacing: 2px;
+
+          a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+        li {
+          padding: 1.3em;
+          border-top: 1px solid $grayishBlue;
+        }
+
+        li:nth-child(3) {
+          border-bottom: 1px solid $grayishBlue;
+        }
+
+        a:hover {
+          color: $softRed;
+        }
+
+        .login-btn {
+          // border: none;
+          margin-top: 1.5em;
+          width: 100%;
+          border: 3px solid #fff;
+          padding: 1em;
+          border-radius: 6px;
+
+          a {
+            color: #fff;
+          }
+
+          &:hover {
+            background: transparent;
+            border: 3px solid $softRed;
+
+            a {
+              color: $softRed;
+            }
+          }
+        }
+
+        .social__nav {
+          margin: 20vmax auto;
+          text-align: center;
+          img {
+            width: 30px;
+
+            + img {
+              margin-left: 40px;
+            }
+          }
+        }
+      }
+    }
+
+    .ham {
+      cursor: pointer;
+      z-index: 1000;
+
+      span {
+        display: block;
+        width: 20px;
+        height: 3px;
+        background: #000;
+        transition: transform 0.4s;
+
+        & + span {
+          margin-top: 3px;
+        }
+      }
+    }
+
+    .change .ham1 {
+      transform: rotate(-45deg) translate(-3px, 2px);
+      background: #fff;
+    }
+
+    .change .ham2 {
+      opacity: 0 !important;
+      background: #fff;
+    }
+
+    .change .ham3 {
+      transform: rotate(45deg) translate(-6px, -6px);
+      background: #fff;
+    }
+  }
+
+  &__image {
+    // display: none;
+    position: relative;
+    z-index: -1;
+
+    img {
+      max-width: 450px;
+    }
+  }
+  &__image::after {
+    @include psedo('', null, null, 0, -100px);
+    // width: 80vmin;
+    // height: 50vmin;
+    width: 80vw;
+    height: 80%;
+    background: $softBlue;
+    border-radius: 6em 0 0 6em;
+    max-height: 400px;
+    z-index: -1000;
+  }
+
+  &__content {
+    text-align: center;
+
+    h1 {
+      margin-top: 1rem;
+    }
+    p {
+      margin: 2em 0;
+    }
+  }
+}
